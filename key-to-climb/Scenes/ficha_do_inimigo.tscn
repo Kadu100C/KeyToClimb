@@ -1,9 +1,17 @@
-[gd_scene format=3 uid="uid://2i476bbo6oc8"]
+[gd_scene load_steps=3 format=3 uid="uid://2i476bbo6oc8"]
+
+[ext_resource type="PackedScene" uid="uid://bdgjs1incga61" path="res://Scenes/pause_menu.tscn" id="1_iawts"]
+[ext_resource type="Script" uid="uid://bhv1f6bu3hsda" path="res://Scenes/ficha_do_inimigo.gd" id="1_o55sw"]
 
 [node name="Ficha do Inimigo" type="Node2D"]
+script = ExtResource("1_o55sw")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
+offset_right = 187.0
 offset_bottom = 23.0
-size_flags_horizontal = 4
+size_flags_horizontal = 8
+size_flags_vertical = 8
 text = "Press SPACE to continue"
+
+[node name="pause_menu" parent="." instance=ExtResource("1_iawts")]
+visible = false

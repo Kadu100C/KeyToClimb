@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://jf7odluvbfo2"]
+
+[ext_resource type="Script" uid="uid://pygr0u0sppy4" path="res://Scenes/credits.gd" id="1_ccovl"]
+[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="1_gryuy"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_ccovl"]
+
+[node name="Credits" type="CanvasLayer"]
+script = ExtResource("1_ccovl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_right = 27.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 40
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_gryuy")
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -22.5
+offset_right = 175.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_ccovl")
+theme_override_font_sizes/font_size = 20
+text = "Kadu Junqueira Giffoni
+
+Andrey Olivatto Garcia"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 100
+
+[node name="Main Menu" type="Button" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gryuy")
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+
+[connection signal="pressed" from="MarginContainer3/Main Menu" to="." method="_on_main_menu_pressed"]
