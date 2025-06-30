@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c51fvpqtahbdw"]
+
+[ext_resource type="Script" uid="uid://cqyc02hthhufb" path="res://Scripts/life_ring.gd" id="1_6djk3"]
+[ext_resource type="Texture2D" uid="uid://c1wax3i8y6bjl" path="res://Sprites/Sprites/Life Ring iten.png" id="2_2yhr1"]
+[ext_resource type="Resource" uid="uid://d0co5ms7by3ph" path="res://Scripts/status_files/life_ring.tres" id="2_iug0l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iug0l"]
+radius = 15.0333
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_6djk3")
+nome = "Life Ring"
+bonus_status = ExtResource("2_iug0l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2yhr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iug0l")

@@ -1,4 +1,4 @@
 extends AnimatedSprite2D
-class_name BossStrength
+class_name BossMagic
 
 @export var base_status: Status

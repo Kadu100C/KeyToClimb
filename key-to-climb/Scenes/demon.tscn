@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1vj1bvga0v3x"]
+[gd_scene load_steps=15 format=3 uid="uid://b1vj1bvga0v3x"]
 
 [ext_resource type="Texture2D" uid="uid://du7eyvd15raw7" path="res://Sprites/Sprites/sprite shet demon.png" id="1_ukkyb"]
+[ext_resource type="Script" uid="uid://uvu64df6n4bb" path="res://Scripts/bossStrength.gd" id="2_fiwpc"]
+[ext_resource type="Resource" uid="uid://clfldr0wtuko0" path="res://Scripts/status_files/bossstrength_status.tres" id="3_li3uk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fiwpc"]
 atlas = ExtResource("1_ukkyb")
@@ -95,3 +97,5 @@ sprite_frames = SubResource("SpriteFrames_yhnr7")
 animation = &"demon_attack"
 autoplay = "demon_idle"
 frame_progress = 0.341598
+script = ExtResource("2_fiwpc")
+base_status = ExtResource("3_li3uk")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://df2ycwobyupxr"]
+[gd_scene load_steps=16 format=3 uid="uid://df2ycwobyupxr"]
 
 [ext_resource type="Texture2D" uid="uid://brqvyfwyo7tup" path="res://Sprites/Sprites/sprite shett mago.png" id="1_y4der"]
+[ext_resource type="Script" uid="uid://by0apgjt6xgf0" path="res://Scripts/BossMagic.gd" id="2_0xdm5"]
+[ext_resource type="Resource" uid="uid://cg0nr7knrf834" path="res://Scripts/status_files/bossmagic_status.tres" id="3_bbshb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xdm5"]
 atlas = ExtResource("1_y4der")
@@ -102,3 +104,5 @@ sprite_frames = SubResource("SpriteFrames_0ktto")
 animation = &"mage_idle"
 autoplay = "mage_idle"
 frame_progress = 0.777872
+script = ExtResource("2_0xdm5")
+base_status = ExtResource("3_bbshb")

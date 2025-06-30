@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Status" load_steps=2 format=3 uid="uid://c31nc4khctdtg"]
+
+[ext_resource type="Script" uid="uid://jawys0hhgemk" path="res://Scripts/status.gd" id="1_ljip6"]
+
+[resource]
+script = ExtResource("1_ljip6")
+strength = 10
+magic = 0
+health = 100
+metadata/_custom_type_script = "uid://jawys0hhgemk"
