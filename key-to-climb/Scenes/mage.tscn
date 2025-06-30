@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://df2ycwobyupxr"]
+
+[ext_resource type="Texture2D" uid="uid://brqvyfwyo7tup" path="res://Sprites/Sprites/sprite shett mago.png" id="1_y4der"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xdm5"]
+atlas = ExtResource("1_y4der")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbshb"]
+atlas = ExtResource("1_y4der")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h01ui"]
+atlas = ExtResource("1_y4der")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_254od"]
+atlas = ExtResource("1_y4der")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qippj"]
+atlas = ExtResource("1_y4der")
+region = Rect2(384, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf4tv"]
+atlas = ExtResource("1_y4der")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtp6b"]
+atlas = ExtResource("1_y4der")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7elky"]
+atlas = ExtResource("1_y4der")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag7jq"]
+atlas = ExtResource("1_y4der")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh4uj"]
+atlas = ExtResource("1_y4der")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qsol"]
+atlas = ExtResource("1_y4der")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ktto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xdm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbshb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h01ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_254od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qippj")
+}],
+"loop": true,
+"name": &"mage_attack",
+"speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf4tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtp6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7elky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag7jq")
+}],
+"loop": true,
+"name": &"mage_damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh4uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qsol")
+}],
+"loop": true,
+"name": &"mage_idle",
+"speed": 2.0
+}]
+
+[node name="mage" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_0ktto")
+animation = &"mage_idle"
+autoplay = "mage_idle"
+frame_progress = 0.777872

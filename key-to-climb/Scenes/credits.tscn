@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://jf7odluvbfo2"]
+[gd_scene load_steps=5 format=3 uid="uid://jf7odluvbfo2"]
 
 [ext_resource type="Script" uid="uid://pygr0u0sppy4" path="res://Scenes/credits.gd" id="1_ccovl"]
 [ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="1_gryuy"]
+[ext_resource type="Texture2D" uid="uid://vacvvmjfv1k8" path="res://Sprites/Sprites/Credits.png" id="2_1bamb"]
 [ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_ccovl"]
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("1_ccovl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 315)
+scale = Vector2(5, 5)
+texture = ExtResource("2_1bamb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 5

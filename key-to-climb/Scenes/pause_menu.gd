@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var resume: Button = $VBoxContainer/Resume
 @onready var main_menu: Button = $"VBoxContainer/Main Menu"
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfcfhc0vs8cfp"]
+
+[ext_resource type="PackedScene" uid="uid://160qq6k6o3wo" path="res://Scenes/player_battle.tscn" id="1_pthcb"]
+[ext_resource type="PackedScene" uid="uid://b1vj1bvga0v3x" path="res://Scenes/demon.tscn" id="2_55awe"]
+
+[node name="boss_battle_1" type="Node2D"]
+
+[node name="player_battle" parent="." instance=ExtResource("1_pthcb")]
+position = Vector2(172, 360)
+scale = Vector2(5, 5)
+
+[node name="demon" parent="." instance=ExtResource("2_55awe")]
+position = Vector2(559, 192)
+scale = Vector2(4, 4)

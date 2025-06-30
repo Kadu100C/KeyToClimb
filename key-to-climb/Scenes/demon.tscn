@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1vj1bvga0v3x"]
+
+[ext_resource type="Texture2D" uid="uid://du7eyvd15raw7" path="res://Sprites/Sprites/sprite shet demon.png" id="1_ukkyb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiwpc"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li3uk"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30acj"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sku76"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydh87"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jagv4"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlxd6"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hj30"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72mqd"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l0w1"]
+atlas = ExtResource("1_ukkyb")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhnr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiwpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li3uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30acj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sku76")
+}],
+"loop": true,
+"name": &"demon_attack",
+"speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydh87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jagv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlxd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hj30")
+}],
+"loop": true,
+"name": &"demon_damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72mqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l0w1")
+}],
+"loop": true,
+"name": &"demon_idle",
+"speed": 2.0
+}]
+
+[node name="demon" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_yhnr7")
+animation = &"demon_attack"
+autoplay = "demon_idle"
+frame_progress = 0.341598
