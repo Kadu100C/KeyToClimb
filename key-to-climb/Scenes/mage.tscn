@@ -66,7 +66,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qippj")
 }],
-"loop": true,
+"loop": false,
 "name": &"mage_attack",
 "speed": 4.5
 }, {
@@ -83,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ag7jq")
 }],
-"loop": true,
+"loop": false,
 "name": &"mage_damage",
 "speed": 5.0
 }, {
@@ -103,6 +103,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_0ktto")
 animation = &"mage_idle"
 autoplay = "mage_idle"
-frame_progress = 0.777872
 script = ExtResource("2_0xdm5")
 base_status = ExtResource("3_bbshb")

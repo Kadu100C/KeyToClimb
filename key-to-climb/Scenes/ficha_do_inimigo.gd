@@ -1,14 +1,19 @@
 extends Node2D
 
+@onready var textinho: Label = $textinho as Label
+@onready var timer: Timer = $timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	textinho.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_timer_timeout() -> void:
+	textinho.visible = true
 
 
 func _unhandled_input(event):

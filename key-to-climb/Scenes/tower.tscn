@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2evoc2ygvkvu"]
+[gd_scene load_steps=18 format=3 uid="uid://c2evoc2ygvkvu"]
 
 [ext_resource type="PackedScene" uid="uid://bdgjs1incga61" path="res://Scenes/pause_menu.tscn" id="1_ndpwd"]
 [ext_resource type="Script" uid="uid://dfvcrfc7okq4h" path="res://Scripts/main.gd" id="1_oh166"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://7trspbnvnqhi" path="res://Scenes/player/player.tscn" id="5_8xwd3"]
 [ext_resource type="Texture2D" uid="uid://cwgw85gqo6blb" path="res://Sprites/Sprites/Pause Button.png" id="5_mxwle"]
 [ext_resource type="PackedScene" uid="uid://c51fvpqtahbdw" path="res://Scenes/life_ring.tscn" id="7_8xwd3"]
+[ext_resource type="Shader" uid="uid://d0y3tbxbneyu3" path="res://ShaderNUVENS/nuvislegais.gdshader" id="7_s7qnd"]
+[ext_resource type="Script" uid="uid://qqcwxh7ita2k" path="res://Scripts/controltime.gd" id="9_7m5bu"]
+[ext_resource type="Texture2D" uid="uid://b0s7sys8rtm4x" path="res://Sprites/Sprites/nuvis.png" id="10_871ox"]
+[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="10_uka73"]
+[ext_resource type="Script" uid="uid://gma5vet1bdte" path="res://Scripts/pause_button.gd" id="11_u6tga"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7m5bu"]
 texture = ExtResource("3_mxwle")
@@ -59,35 +64,14 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_7m5bu")
 sources/1 = SubResource("TileSetAtlasSource_uka73")
 
-[sub_resource type="GDScript" id="GDScript_mxwle"]
-script/source = "extends Button
-
-@onready var pause_menu: CanvasLayer = $\"../../pause_menu\"
-
-
-func _on_pressed() -> void:
-		pause_menu.visible = true
-		get_tree().paused = true
-"
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnl86"]
+shader = ExtResource("7_s7qnd")
+shader_parameter/move_speed = 0.08
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_oh166")
 
-[node name="pause_menu" parent="." instance=ExtResource("1_ndpwd")]
-visible = false
-
 [node name="Tower" type="Node" parent="."]
-
-[node name="Fundo" type="Sprite2D" parent="Tower"]
-position = Vector2(400, -1394)
-scale = Vector2(5, 5)
-texture = ExtResource("2_81kva")
-
-[node name="Fundo2" type="Sprite2D" parent="Tower"]
-position = Vector2(400, -11998)
-rotation = 3.14159
-scale = Vector2(5, 21.53)
-texture = ExtResource("2_81kva")
 
 [node name="TileMap" type="TileMap" parent="Tower"]
 scale = Vector2(5, 5)
@@ -107,20 +91,84 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(80, -1846)
 scale = Vector2(2.53425, 2.48)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(400, 300)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Tower"]
 
-[node name="Button" type="Button" parent="Camera2D"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Tower/ParallaxBackground"]
+
+[node name="Fundo" type="Sprite2D" parent="Tower/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(400, -1394)
+scale = Vector2(5, 5)
+texture = ExtResource("2_81kva")
+
+[node name="Fundo2" type="Sprite2D" parent="Tower/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(400, -11998)
+rotation = 3.14159
+scale = Vector2(5, 21.53)
+texture = ExtResource("2_81kva")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Tower/ParallaxBackground"]
+visibility_layer = 9
+motion_mirroring = Vector2(1200, 0)
+
+[node name="nuvis" type="Sprite2D" parent="Tower/ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wnl86")
+position = Vector2(399, -3191)
+scale = Vector2(2, 2)
+texture = ExtResource("10_871ox")
+
+[node name="Timer_button" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Timer_button"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_7m5bu")
+
+[node name="clock_timer" type="Timer" parent="Timer_button/Control"]
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Timer_button/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 17
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Timer_button/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="counter_time" type="Label" parent="Timer_button/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_uka73")
+theme_override_font_sizes/font_size = 30
+
+[node name="button" type="Button" parent="Timer_button"]
 z_index = 1
-offset_left = -388.0
-offset_top = -291.0
-offset_right = -344.0
-offset_bottom = -251.0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 56.0
+offset_bottom = 49.0
 scale = Vector2(1.5, 1.5)
 text = "
 "
 icon = ExtResource("5_mxwle")
 flat = true
-script = SubResource("GDScript_mxwle")
+script = ExtResource("11_u6tga")
 
-[connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_pressed"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="pause_menu" parent="." instance=ExtResource("1_ndpwd")]
+visible = false
+
+[connection signal="timeout" from="Timer_button/Control/clock_timer" to="Timer_button/Control" method="_on_clock_timer_timeout"]
+[connection signal="pressed" from="Timer_button/button" to="Timer_button/button" method="_on_pressed"]
