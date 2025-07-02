@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4dq1dobf807o"]
+[gd_scene load_steps=6 format=3 uid="uid://d4dq1dobf807o"]
 
 [ext_resource type="Texture2D" uid="uid://by721r5g07mb1" path="res://Sprites/Sprites/Axe iten.png" id="1_5sm5t"]
+[ext_resource type="Script" uid="uid://btli50y23h2ng" path="res://Scripts/axe.gd" id="1_6o4l1"]
+[ext_resource type="Resource" uid="uid://dnx6ayhyyp4pw" path="res://Scripts/status_files/axe.tres" id="2_2q7ty"]
 [ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_aowxy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aowxy"]
 radius = 24.0
 
 [node name="axe" type="Area2D"]
+script = ExtResource("1_6o4l1")
+nome = "Axe"
+bonus_status = ExtResource("2_2q7ty")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

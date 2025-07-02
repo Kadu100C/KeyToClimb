@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://5g2brb8fbihm"]
+[gd_scene load_steps=6 format=3 uid="uid://5g2brb8fbihm"]
 
+[ext_resource type="Script" uid="uid://d067k0a7t1rka" path="res://Scripts/sword.gd" id="1_d6wag"]
 [ext_resource type="Texture2D" uid="uid://bpysmaw4x04b6" path="res://Sprites/Sprites/Sword iten.png" id="1_goa0h"]
 [ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_6wdhb"]
+[ext_resource type="Resource" uid="uid://cgnc5k6mpbk73" path="res://Scripts/status_files/sword.tres" id="2_kb2vl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wdhb"]
 radius = 24.0208
 
 [node name="sword" type="Area2D"]
+script = ExtResource("1_d6wag")
+nome = "Sword"
+bonus_status = ExtResource("2_kb2vl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

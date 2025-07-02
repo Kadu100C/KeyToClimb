@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Status" load_steps=2 format=3 uid="uid://dnx6ayhyyp4pw"]
+
+[ext_resource type="Script" uid="uid://jawys0hhgemk" path="res://Scripts/status.gd" id="1_topbd"]
+
+[resource]
+script = ExtResource("1_topbd")
+strength = 5
+magic = 0
+health = 0
+metadata/_custom_type_script = "uid://jawys0hhgemk"

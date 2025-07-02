@@ -1,5 +1,5 @@
 extends Area2D
-class_name Life_Ring
+class_name Sword
 
 @export var nome: String
 @export var bonus_status: Status
