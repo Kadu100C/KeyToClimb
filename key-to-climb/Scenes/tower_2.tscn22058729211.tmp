@@ -1,26 +1,26 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2evoc2ygvkvu"]
+[gd_scene load_steps=23 format=3 uid="uid://dvwlsifndfrvr"]
 
-[ext_resource type="PackedScene" uid="uid://bdgjs1incga61" path="res://Scenes/pause_menu.tscn" id="1_ndpwd"]
-[ext_resource type="Script" uid="uid://dfvcrfc7okq4h" path="res://Scripts/main.gd" id="1_oh166"]
-[ext_resource type="Texture2D" uid="uid://dwwrqjcvy5smm" path="res://Sprites/Sprites/Fundo.png" id="2_81kva"]
-[ext_resource type="Texture2D" uid="uid://vag67avoxsk1" path="res://Sprites/Sprites/torre.png" id="3_mxwle"]
-[ext_resource type="Texture2D" uid="uid://bss2xkh1irvjc" path="res://Sprites/Sprites/Escada ktc.png" id="4_oh166"]
-[ext_resource type="PackedScene" uid="uid://7trspbnvnqhi" path="res://Scenes/player/player.tscn" id="5_8xwd3"]
-[ext_resource type="Texture2D" uid="uid://cwgw85gqo6blb" path="res://Sprites/Sprites/Pause Button.png" id="5_mxwle"]
-[ext_resource type="PackedScene" uid="uid://c51fvpqtahbdw" path="res://Scenes/life_ring.tscn" id="7_8xwd3"]
-[ext_resource type="Shader" uid="uid://d0y3tbxbneyu3" path="res://ShaderNUVENS/nuvislegais.gdshader" id="7_s7qnd"]
-[ext_resource type="Script" uid="uid://qqcwxh7ita2k" path="res://Scripts/controltime.gd" id="9_7m5bu"]
-[ext_resource type="Texture2D" uid="uid://b0s7sys8rtm4x" path="res://Sprites/Sprites/nuvis.png" id="10_871ox"]
-[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="10_uka73"]
-[ext_resource type="Script" uid="uid://gma5vet1bdte" path="res://Scripts/pause_button.gd" id="11_u6tga"]
-[ext_resource type="AudioStream" uid="uid://ni87c37bdi2t" path="res://musics/tower music.mp3" id="14_wnl86"]
-[ext_resource type="PackedScene" uid="uid://5g2brb8fbihm" path="res://Scenes/sword.tscn" id="15_a4lnx"]
-[ext_resource type="PackedScene" uid="uid://cs70fklqb36iu" path="res://Scenes/wizzard_item.tscn" id="16_ixbif"]
-[ext_resource type="PackedScene" uid="uid://d4dq1dobf807o" path="res://Scenes/axe.tscn" id="17_arclx"]
-[ext_resource type="PackedScene" uid="uid://cjga6bbgpwld5" path="res://Scenes/mushroom.tscn" id="18_arclx"]
+[ext_resource type="Texture2D" uid="uid://vag67avoxsk1" path="res://Sprites/Sprites/torre.png" id="1_ausoo"]
+[ext_resource type="Script" uid="uid://c5pwda5g8kegb" path="res://Scripts/tower_2.gd" id="1_pfprh"]
+[ext_resource type="Texture2D" uid="uid://bss2xkh1irvjc" path="res://Sprites/Sprites/Escada ktc.png" id="2_pfprh"]
+[ext_resource type="PackedScene" uid="uid://7trspbnvnqhi" path="res://Scenes/player/player.tscn" id="3_vvbsq"]
+[ext_resource type="PackedScene" uid="uid://c51fvpqtahbdw" path="res://Scenes/life_ring.tscn" id="4_j1oxe"]
+[ext_resource type="Texture2D" uid="uid://dwwrqjcvy5smm" path="res://Sprites/Sprites/Fundo.png" id="5_i23fn"]
+[ext_resource type="Shader" uid="uid://d0y3tbxbneyu3" path="res://ShaderNUVENS/nuvislegais.gdshader" id="6_1qep0"]
+[ext_resource type="Texture2D" uid="uid://b0s7sys8rtm4x" path="res://Sprites/Sprites/nuvis.png" id="7_wxiy7"]
+[ext_resource type="Script" uid="uid://qqcwxh7ita2k" path="res://Scripts/controltime.gd" id="8_fa10x"]
+[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="9_plmem"]
+[ext_resource type="Texture2D" uid="uid://cwgw85gqo6blb" path="res://Sprites/Sprites/Pause Button.png" id="10_lodli"]
+[ext_resource type="Script" uid="uid://gma5vet1bdte" path="res://Scripts/pause_button.gd" id="11_ksbpr"]
+[ext_resource type="PackedScene" uid="uid://bdgjs1incga61" path="res://Scenes/pause_menu.tscn" id="12_77pye"]
+[ext_resource type="AudioStream" uid="uid://ni87c37bdi2t" path="res://musics/tower music.mp3" id="13_jv0t5"]
+[ext_resource type="PackedScene" uid="uid://cs70fklqb36iu" path="res://Scenes/wizzard_item.tscn" id="16_fa10x"]
+[ext_resource type="PackedScene" uid="uid://5g2brb8fbihm" path="res://Scenes/sword.tscn" id="17_plmem"]
+[ext_resource type="PackedScene" uid="uid://d4dq1dobf807o" path="res://Scenes/axe.tscn" id="18_lodli"]
+[ext_resource type="PackedScene" uid="uid://cjga6bbgpwld5" path="res://Scenes/mushroom.tscn" id="19_ksbpr"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wnl86"]
-texture = ExtResource("3_mxwle")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jt2o7"]
+texture = ExtResource("1_ausoo")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -59,28 +59,28 @@ texture_region_size = Vector2i(32, 32)
 4:5/0 = 0
 5:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4lnx"]
-texture = ExtResource("4_oh166")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tos1x"]
+texture = ExtResource("2_pfprh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_871ox"]
+[sub_resource type="TileSet" id="TileSet_q0vcj"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_wnl86")
-sources/1 = SubResource("TileSetAtlasSource_a4lnx")
+sources/0 = SubResource("TileSetAtlasSource_jt2o7")
+sources/1 = SubResource("TileSetAtlasSource_tos1x")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnl86"]
-shader = ExtResource("7_s7qnd")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wv2l"]
+shader = ExtResource("6_1qep0")
 shader_parameter/move_speed = 0.08
 
-[node name="Tower" type="Node2D"]
-script = ExtResource("1_oh166")
+[node name="tower_2" type="Node2D"]
+script = ExtResource("1_pfprh")
 
 [node name="Tower" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Tower"]
 scale = Vector2(5, 5)
-tile_set = SubResource("TileSet_871ox")
+tile_set = SubResource("TileSet_q0vcj")
 rendering_quadrant_size = 32
 format = 2
 layer_0/name = "Torre"
@@ -88,12 +88,14 @@ layer_0/tile_data = PackedInt32Array(131073, 0, 2, 131074, 65536, 2, 131075, 131
 layer_1/name = "Escada"
 layer_1/tile_data = PackedInt32Array(131074, 1, 0, 65538, 1, 0, 2, 1, 0, -65534, 1, 0, -131070, 1, 0, -196606, 1, 0, -262142, 1, 0, -327678, 1, 0, -393214, 1, 0, -458750, 1, 0, -524286, 1, 0, -589822, 1, 0, -655358, 1, 0, -720894, 1, 0, -786430, 1, 0, -851966, 1, 0, -917502, 1, 0, -983038, 1, 0, -1048574, 1, 0, -1441790, 1, 0, -1114110, 1, 0, -1179646, 1, 0, -1245182, 1, 0, -1310718, 1, 0, -1376254, 1, 0, -1507326, 1, 0, -1572862, 1, 0, -1638398, 1, 0, -1703934, 1, 0, -1769470, 1, 0, -1835006, 1, 0, -1900542, 1, 0, -1966078, 1, 0, -2031614, 1, 0, -2097150, 1, 0, -2162686, 1, 0, -2228222, 1, 0, -2293758, 1, 0, -2359294, 1, 0, -2424830, 1, 0, -2490366, 1, 0, -2555902, 1, 0, -2621438, 1, 0, -2686974, 1, 0, -2752510, 1, 0, -2818046, 1, 0, -2883582, 1, 0, -2949118, 1, 0, -3014654, 1, 0, -3080190, 1, 0, -3145726, 1, 0, -3211262, 1, 0, -3276798, 1, 0, -3342334, 1, 0, -3407870, 1, 0, -3473406, 1, 0, -3538942, 1, 0, -3604478, 1, 0, -3670014, 1, 0, -3735550, 1, 0, -3801086, 1, 0, -3866622, 1, 0, -3932158, 1, 0, -3997694, 1, 0, -4063230, 1, 0, -4128766, 1, 0, -4194302, 1, 0, -4259838, 1, 0, -4325374, 1, 0, -4390910, 1, 0, -4456446, 1, 0)
 
-[node name="Player" parent="Tower" instance=ExtResource("5_8xwd3")]
+[node name="Player" parent="Tower" instance=ExtResource("3_vvbsq")]
 position = Vector2(400, 300)
 scale = Vector2(1.5, 1.5)
 
-[node name="LifeRing" parent="Tower" instance=ExtResource("7_8xwd3")]
+[node name="LifeRing" parent="Tower" instance=ExtResource("4_j1oxe")]
+visible = false
 position = Vector2(80, -1846)
+scale = Vector2(2.53425, 2.48)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Tower"]
 
@@ -102,13 +104,13 @@ position = Vector2(80, -1846)
 [node name="Fundo" type="Sprite2D" parent="Tower/ParallaxBackground/ParallaxLayer2"]
 position = Vector2(400, -1394)
 scale = Vector2(5, 5)
-texture = ExtResource("2_81kva")
+texture = ExtResource("5_i23fn")
 
 [node name="Fundo2" type="Sprite2D" parent="Tower/ParallaxBackground/ParallaxLayer2"]
 position = Vector2(400, -11998)
 rotation = 3.14159
 scale = Vector2(5, 21.53)
-texture = ExtResource("2_81kva")
+texture = ExtResource("5_i23fn")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Tower/ParallaxBackground"]
 visibility_layer = 9
@@ -116,10 +118,10 @@ motion_mirroring = Vector2(1200, 0)
 
 [node name="nuvis" type="Sprite2D" parent="Tower/ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-material = SubResource("ShaderMaterial_wnl86")
+material = SubResource("ShaderMaterial_8wv2l")
 position = Vector2(399, -3191)
 scale = Vector2(2, 2)
-texture = ExtResource("10_871ox")
+texture = ExtResource("7_wxiy7")
 
 [node name="Timer_button" type="CanvasLayer" parent="."]
 
@@ -130,7 +132,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("9_7m5bu")
+script = ExtResource("8_fa10x")
 
 [node name="clock_timer" type="Timer" parent="Timer_button/Control"]
 autostart = true
@@ -152,7 +154,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("10_uka73")
+theme_override_fonts/font = ExtResource("9_plmem")
 theme_override_font_sizes/font_size = 30
 
 [node name="button" type="Button" parent="Timer_button"]
@@ -164,38 +166,41 @@ offset_bottom = 49.0
 scale = Vector2(1.5, 1.5)
 text = "
 "
-icon = ExtResource("5_mxwle")
+icon = ExtResource("10_lodli")
 flat = true
-script = ExtResource("11_u6tga")
+script = ExtResource("11_ksbpr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(400, 300)
 limit_top = -3200
 
-[node name="pause_menu" parent="." instance=ExtResource("1_ndpwd")]
+[node name="pause_menu" parent="." instance=ExtResource("12_77pye")]
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_wnl86")
+stream = ExtResource("13_jv0t5")
 autoplay = true
 
-[node name="sword" parent="." instance=ExtResource("15_a4lnx")]
-position = Vector2(80, -395)
+[node name="wizzard_item" parent="." instance=ExtResource("16_fa10x")]
+position = Vector2(80, -699)
 
-[node name="wizzard_item" parent="." instance=ExtResource("16_ixbif")]
-position = Vector2(710, -1366)
+[node name="wizzard_item2" parent="." instance=ExtResource("16_fa10x")]
+position = Vector2(710, -2599)
 
-[node name="wizzard_item2" parent="." instance=ExtResource("16_ixbif")]
-position = Vector2(80, -2345)
+[node name="sword" parent="." instance=ExtResource("17_plmem")]
+position = Vector2(80, -1219)
 
-[node name="axe" parent="." instance=ExtResource("17_arclx")]
-position = Vector2(710, -2624)
+[node name="axe" parent="." instance=ExtResource("18_lodli")]
+position = Vector2(710, -1663)
 
-[node name="axe2" parent="." instance=ExtResource("17_arclx")]
-position = Vector2(710, -3001)
+[node name="Mushroom" parent="." instance=ExtResource("19_ksbpr")]
+position = Vector2(80, -2894)
 
-[node name="Mushroom" parent="." instance=ExtResource("18_arclx")]
-position = Vector2(80, -808)
+[node name="Area2D" parent="." instance=ExtResource("4_j1oxe")]
+position = Vector2(709, -289)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_j1oxe")]
+position = Vector2(710, -2029)
 
 [connection signal="timeout" from="Timer_button/Control/clock_timer" to="Timer_button/Control" method="_on_clock_timer_timeout"]
 [connection signal="pressed" from="Timer_button/button" to="Timer_button/button" method="_on_pressed"]

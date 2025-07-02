@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://16xnc2prv2u7"]
+[gd_scene load_steps=5 format=3 uid="uid://denp1i32yildc"]
 
-[ext_resource type="Texture2D" uid="uid://ck73sn56k23m7" path="res://Sprites/Sprites/Game over.png" id="1_ei2jg"]
-[ext_resource type="Script" uid="uid://dgbdkad4e3qch" path="res://Scripts/game_over.gd" id="1_jix3p"]
-[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="2_sy35n"]
-[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="3_jix3p"]
-[ext_resource type="AudioStream" uid="uid://ds4d4ipc3xhjp" path="res://musics/game over music.mp3" id="4_sy35n"]
+[ext_resource type="Texture2D" uid="uid://c8548xset8gqn" path="res://Sprites/Sprites/victory.png" id="1_7yj50"]
+[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="2_slr2v"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="3_f34f5"]
+[ext_resource type="AudioStream" uid="uid://cr601ctnr4rdl" path="res://musics/victory music.mp3" id="4_xy5eq"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_jix3p")
+[node name="victory" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -15,12 +13,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.580392)
+color = Color(1, 1, 1, 0.121569)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
 scale = Vector2(5, 5)
-texture = ExtResource("1_ei2jg")
+texture = ExtResource("1_7yj50")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -39,19 +37,20 @@ theme_override_constants/separation = 400
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_sy35n")
+theme_override_fonts/font = ExtResource("2_slr2v")
 theme_override_font_sizes/font_size = 60
-text = "GAME OVER"
+text = "YOU WIN!!"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("3_jix3p")
+theme_override_fonts/font = ExtResource("3_f34f5")
 theme_override_font_sizes/font_size = 24
-text = "Press SPACE to try again"
+text = "Press SPACE to return to Main Menu"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_sy35n")
+stream = ExtResource("4_xy5eq")
 autoplay = true

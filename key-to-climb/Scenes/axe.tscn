@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4dq1dobf807o"]
+
+[ext_resource type="Texture2D" uid="uid://by721r5g07mb1" path="res://Sprites/Sprites/Axe iten.png" id="1_5sm5t"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_aowxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aowxy"]
+radius = 24.0
+
+[node name="axe" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_5sm5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_aowxy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -46.0
+offset_top = 68.0
+offset_right = 46.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.603922, 0.407843, 0.180392, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_aowxy")
+text = "5+ ATK"
+
+[node name="Label" type="Label" parent="Label"]
+visible = false
+layout_mode = 0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.603922, 0.407843, 0.180392, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_aowxy")
+text = "5+ ATK"

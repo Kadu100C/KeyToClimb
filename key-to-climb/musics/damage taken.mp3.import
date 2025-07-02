@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfpvkph5qdqh6"
+path="res://.godot/imported/damage taken.mp3-9f8f0057b0c4c02c11380df5cfc9c6be.mp3str"
+
+[deps]
+
+source_file="res://musics/damage taken.mp3"
+dest_files=["res://.godot/imported/damage taken.mp3-9f8f0057b0c4c02c11380df5cfc9c6be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

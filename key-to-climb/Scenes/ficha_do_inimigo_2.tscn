@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://2i476bbo6oc8"]
+[gd_scene load_steps=9 format=3 uid="uid://ilneb6s0xh7i"]
 
-[ext_resource type="PackedScene" uid="uid://bdgjs1incga61" path="res://Scenes/pause_menu.tscn" id="1_iawts"]
-[ext_resource type="Script" uid="uid://bhv1f6bu3hsda" path="res://Scenes/ficha_do_inimigo.gd" id="1_o55sw"]
-[ext_resource type="PackedScene" uid="uid://ckfabqhi1hwj7" path="res://Scenes/demon_ficha.tscn" id="3_x0cl5"]
-[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="4_hwalw"]
+[ext_resource type="Script" uid="uid://bwlkd6gr4lvk2" path="res://Scripts/ficha_do_inimigo_2.gd" id="1_7hepo"]
+[ext_resource type="PackedScene" uid="uid://bdgjs1incga61" path="res://Scenes/pause_menu.tscn" id="1_kmp60"]
+[ext_resource type="PackedScene" uid="uid://cnyo84ykrgto8" path="res://Scenes/wizzard_ficha.tscn" id="2_kmp60"]
+[ext_resource type="AudioStream" uid="uid://ij0hiv0x53uj" path="res://musics/ficha.mp3" id="3_1sss2"]
+[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="3_7hepo"]
 
 [sub_resource type="Animation" id="Animation_hwalw"]
 length = 0.001
@@ -66,21 +67,27 @@ _data = {
 &"ficha_demon": SubResource("Animation_x0cl5")
 }
 
-[node name="Ficha do Inimigo" type="Node2D"]
-script = ExtResource("1_o55sw")
+[node name="ficha_do_inimigo_2" type="Node2D"]
+script = ExtResource("1_7hepo")
 
-[node name="pause_menu" parent="." instance=ExtResource("1_iawts")]
+[node name="pause_menu" parent="." instance=ExtResource("1_kmp60")]
 visible = false
 
-[node name="demon_ficha" parent="." instance=ExtResource("3_x0cl5")]
+[node name="wizzard_ficha" parent="." instance=ExtResource("2_kmp60")]
 position = Vector2(400, 600)
 rotation = -0.20944
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="demon_ficha"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wizzard_ficha"]
 libraries = {
 &"": SubResource("AnimationLibrary_w11xe")
 }
 autoplay = "ficha_demon"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="wizzard_ficha/AnimationPlayer"]
+stream = ExtResource("3_1sss2")
+volume_db = -24.499
+pitch_scale = 2.33
+autoplay = true
 
 [node name="textinho" type="Label" parent="."]
 anchors_preset = 8
@@ -96,7 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("4_hwalw")
+theme_override_fonts/font = ExtResource("3_7hepo")
 theme_override_font_sizes/font_size = 25
 text = "Press SPACE to continue"
 

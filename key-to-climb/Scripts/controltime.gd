@@ -6,6 +6,8 @@ extends Control
 var seconds = 0
 @export_range(0,60) var default_seconds = 30
 
+
+
 signal time_is_up()
 
 
@@ -18,7 +20,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if seconds == 0:
 		get_tree().change_scene_to_file("res://Scenes/boss_battle_1.tscn")
-
 
 func _on_clock_timer_timeout() -> void:
 	if seconds == 0:

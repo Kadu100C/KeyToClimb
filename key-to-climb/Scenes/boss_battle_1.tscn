@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfcfhc0vs8cfp"]
+[gd_scene load_steps=5 format=3 uid="uid://dfcfhc0vs8cfp"]
 
 [ext_resource type="Texture2D" uid="uid://rm5vtbnkg056" path="res://Sprites/Sprites/battle arena.png" id="1_i1hdi"]
 [ext_resource type="PackedScene" uid="uid://160qq6k6o3wo" path="res://Scenes/player_battle.tscn" id="1_pthcb"]
 [ext_resource type="PackedScene" uid="uid://l47meecca66a" path="res://Scenes/demon.tscn" id="3_i1hdi"]
+[ext_resource type="AudioStream" uid="uid://cfyyg5dhynd8e" path="res://musics/battle music.mp3" id="4_r56yw"]
 
 [node name="boss_battle_1" type="Node2D"]
 
@@ -15,20 +16,10 @@ texture = ExtResource("1_i1hdi")
 position = Vector2(172, 360)
 scale = Vector2(5, 5)
 
-[node name="demon" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(579, 234)
-scale = Vector2(4, 4)
-script = null
-
 [node name="demon2" parent="." instance=ExtResource("3_i1hdi")]
 position = Vector2(583, 222)
 scale = Vector2(4, 4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r56yw")
+autoplay = true

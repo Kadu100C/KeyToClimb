@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjga6bbgpwld5"]
+
+[ext_resource type="Texture2D" uid="uid://dm8udaf5017mp" path="res://Sprites/Sprites/Mushuroom iten.png" id="1_2r5i3"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_0q7t7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0q7t7"]
+radius = 22.2036
+
+[node name="Mushroom" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_2r5i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_0q7t7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = 50.0
+offset_right = 31.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.329412, 0.462745, 0.647059, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_0q7t7")
+text = "10+ ATK"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 43.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_0q7t7")
+text = "10- HP"

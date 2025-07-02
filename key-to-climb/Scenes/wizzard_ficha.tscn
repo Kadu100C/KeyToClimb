@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckfabqhi1hwj7"]
+[gd_scene load_steps=4 format=3 uid="uid://cnyo84ykrgto8"]
 
-[ext_resource type="Texture2D" uid="uid://dbpt63nfgrut7" path="res://Sprites/Sprites/ficha demon.png" id="1_p5kth"]
-[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="2_c3h1l"]
-[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="3_rk533"]
+[ext_resource type="Texture2D" uid="uid://c52b6mm5wi375" path="res://Sprites/Sprites/ficha mage.png" id="1_wwv66"]
+[ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="2_5m6mt"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="3_nxt6c"]
 
-[node name="demon_ficha" type="Sprite2D"]
+[node name="wizzard_ficha" type="Sprite2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
 scale = Vector2(6, 6)
-texture = ExtResource("1_p5kth")
+texture = ExtResource("1_wwv66")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 309.0
@@ -17,18 +17,18 @@ offset_top = 176.0
 offset_right = 735.0
 offset_bottom = 265.0
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_c3h1l")
-theme_override_font_sizes/font_size = 42
-text = "The Demon"
+theme_override_fonts/font = ExtResource("2_5m6mt")
+theme_override_font_sizes/font_size = 39
+text = "The Wizzard"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 309.0
+offset_left = 325.0
 offset_top = 228.0
-offset_right = 735.0
+offset_right = 751.0
 offset_bottom = 317.0
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_c3h1l")
+theme_override_fonts/font = ExtResource("2_5m6mt")
 theme_override_font_sizes/font_size = 20
 text = "Reward: a gold cheast"
 metadata/_edit_use_anchors_ = true
@@ -39,9 +39,9 @@ offset_top = 336.0
 offset_right = 294.0
 offset_bottom = 382.0
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_rk533")
+theme_override_fonts/font = ExtResource("3_nxt6c")
 theme_override_font_sizes/font_size = 45
-text = "HP 120"
+text = "HP 100"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="."]
@@ -50,9 +50,9 @@ offset_top = 420.0
 offset_right = 293.0
 offset_bottom = 466.0
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_rk533")
+theme_override_fonts/font = ExtResource("3_nxt6c")
 theme_override_font_sizes/font_size = 45
-text = "ATK 40"
+text = "ATK 50"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="."]
@@ -62,11 +62,11 @@ offset_left = 325.0
 offset_top = 344.0
 offset_right = 443.0
 offset_bottom = 437.0
-theme_override_colors/font_color = Color(0.329264, 0.462569, 0.647425, 1)
+theme_override_colors/font_color = Color(0.604416, 0.409677, 0.178738, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_rk533")
+theme_override_fonts/font = ExtResource("3_nxt6c")
 theme_override_font_sizes/font_size = 28
 text = "This creature is 
-weak to Magic
+weak to Physical
 damage"
 metadata/_edit_use_anchors_ = true

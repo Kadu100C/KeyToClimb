@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnawu2t6n6mkr"
+path="res://.godot/imported/grab item.mp3-72bd72cf104143cf93534639135b9183.mp3str"
+
+[deps]
+
+source_file="res://musics/grab item.mp3"
+dest_files=["res://.godot/imported/grab item.mp3-72bd72cf104143cf93534639135b9183.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

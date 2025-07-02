@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c51fvpqtahbdw"]
+[gd_scene load_steps=6 format=3 uid="uid://c51fvpqtahbdw"]
 
 [ext_resource type="Script" uid="uid://cqyc02hthhufb" path="res://Scripts/life_ring.gd" id="1_6djk3"]
 [ext_resource type="Texture2D" uid="uid://c1wax3i8y6bjl" path="res://Sprites/Sprites/Life Ring iten.png" id="2_2yhr1"]
 [ext_resource type="Resource" uid="uid://d0co5ms7by3ph" path="res://Scripts/status_files/life_ring.tres" id="2_iug0l"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="4_iug0l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iug0l"]
 radius = 15.0333
@@ -13,7 +14,28 @@ nome = "Life Ring"
 bonus_status = ExtResource("2_iug0l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("2_2yhr1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_iug0l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -39.0
+offset_top = 50.0
+offset_right = 39.0
+offset_bottom = 73.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_iug0l")
+text = "20+ HP"
+
+[node name="Label" type="Label" parent="Label"]
+visible = false
+layout_mode = 0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 43.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_iug0l")
+text = "10- HP"

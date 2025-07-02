@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://8a3tw6a43ng1"]
+
+[ext_resource type="Texture2D" uid="uid://rm5vtbnkg056" path="res://Sprites/Sprites/battle arena.png" id="1_ljn0w"]
+[ext_resource type="PackedScene" uid="uid://160qq6k6o3wo" path="res://Scenes/player_battle.tscn" id="2_owqkt"]
+[ext_resource type="PackedScene" uid="uid://df2ycwobyupxr" path="res://Scenes/mage.tscn" id="3_gt46b"]
+[ext_resource type="AudioStream" uid="uid://cfyyg5dhynd8e" path="res://musics/battle music.mp3" id="4_riuoy"]
+
+[node name="boss_battle_2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 287)
+scale = Vector2(5, 5)
+texture = ExtResource("1_ljn0w")
+
+[node name="player_battle" parent="." instance=ExtResource("2_owqkt")]
+position = Vector2(172, 360)
+scale = Vector2(5, 5)
+
+[node name="mage" parent="." instance=ExtResource("3_gt46b")]
+position = Vector2(586, 229)
+scale = Vector2(4, 4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_riuoy")
+autoplay = true

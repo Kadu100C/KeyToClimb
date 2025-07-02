@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bv3tiv8ov138y"
+path="res://.godot/imported/mage attack.mp3-937473fe8f89730d01e70d9bc91ebed6.mp3str"
+
+[deps]
+
+source_file="res://musics/mage attack.mp3"
+dest_files=["res://.godot/imported/mage attack.mp3-937473fe8f89730d01e70d9bc91ebed6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://5g2brb8fbihm"]
+
+[ext_resource type="Texture2D" uid="uid://bpysmaw4x04b6" path="res://Sprites/Sprites/Sword iten.png" id="1_goa0h"]
+[ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_6wdhb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wdhb"]
+radius = 24.0208
+
+[node name="sword" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_goa0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_6wdhb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -46.0
+offset_top = 68.0
+offset_right = 46.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.603922, 0.407843, 0.180392, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_6wdhb")
+text = "10+ ATK"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 43.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_6wdhb")
+text = "10- HP"
