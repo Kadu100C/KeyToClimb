@@ -92,8 +92,37 @@ layer_1/tile_data = PackedInt32Array(131074, 1, 0, 65538, 1, 0, 2, 1, 0, -65534,
 position = Vector2(400, 300)
 scale = Vector2(1.5, 1.5)
 
-[node name="LifeRing" parent="Tower" instance=ExtResource("7_8xwd3")]
-position = Vector2(80, -1846)
+[node name="ItemList" type="Node2D" parent="Tower"]
+position = Vector2(400, 300)
+scale = Vector2(1.5, 1.5)
+
+[node name="LifeRing" parent="Tower/ItemList" instance=ExtResource("7_8xwd3")]
+position = Vector2(-213.333, -1430.67)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="sword" parent="Tower/ItemList" instance=ExtResource("15_a4lnx")]
+position = Vector2(-213.333, -463.333)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="wizzard_item" parent="Tower/ItemList" instance=ExtResource("16_ixbif")]
+position = Vector2(197.333, -1110.67)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="wizzard_item2" parent="Tower/ItemList" instance=ExtResource("16_ixbif")]
+position = Vector2(-213.333, -1763.33)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="axe" parent="Tower/ItemList" instance=ExtResource("17_arclx")]
+position = Vector2(206.667, -1949.33)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="axe2" parent="Tower/ItemList" instance=ExtResource("17_arclx")]
+position = Vector2(206.667, -2200.67)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="Mushroom" parent="Tower/ItemList" instance=ExtResource("18_arclx")]
+position = Vector2(-213.333, -738.667)
+scale = Vector2(0.666667, 0.666667)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Tower"]
 
@@ -178,24 +207,6 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_wnl86")
 autoplay = true
-
-[node name="sword" parent="." instance=ExtResource("15_a4lnx")]
-position = Vector2(80, -395)
-
-[node name="wizzard_item" parent="." instance=ExtResource("16_ixbif")]
-position = Vector2(710, -1366)
-
-[node name="wizzard_item2" parent="." instance=ExtResource("16_ixbif")]
-position = Vector2(80, -2345)
-
-[node name="axe" parent="." instance=ExtResource("17_arclx")]
-position = Vector2(710, -2624)
-
-[node name="axe2" parent="." instance=ExtResource("17_arclx")]
-position = Vector2(710, -3001)
-
-[node name="Mushroom" parent="." instance=ExtResource("18_arclx")]
-position = Vector2(80, -808)
 
 [connection signal="timeout" from="Timer_button/Control/clock_timer" to="Timer_button/Control" method="_on_clock_timer_timeout"]
 [connection signal="pressed" from="Timer_button/button" to="Timer_button/button" method="_on_pressed"]

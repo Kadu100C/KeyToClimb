@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://7trspbnvnqhi"]
+[gd_scene load_steps=27 format=3 uid="uid://7trspbnvnqhi"]
 
 [ext_resource type="Script" uid="uid://dmegprcp2hbxb" path="res://Scripts/player.gd" id="1_eo61r"]
 [ext_resource type="Texture2D" uid="uid://cyghs26hf0dk5" path="res://Sprites/Sprites/Character sprite sheet.png" id="2_eo61r"]
 [ext_resource type="Resource" uid="uid://c31nc4khctdtg" path="res://Scripts/status_files/player_stats.tres" id="2_mxepk"]
+[ext_resource type="AudioStream" uid="uid://cnawu2t6n6mkr" path="res://musics/grab item.mp3" id="4_e41v5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e41v5"]
 atlas = ExtResource("2_eo61r")
@@ -60,6 +61,30 @@ region = Rect2(384, 0, 64, 32)
 atlas = ExtResource("2_eo61r")
 region = Rect2(448, 0, 64, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic3d6"]
+atlas = ExtResource("2_eo61r")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spm8d"]
+atlas = ExtResource("2_eo61r")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpkfr"]
+atlas = ExtResource("2_eo61r")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kysaj"]
+atlas = ExtResource("2_eo61r")
+region = Rect2(192, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egohg"]
+atlas = ExtResource("2_eo61r")
+region = Rect2(256, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua3np"]
+atlas = ExtResource("2_eo61r")
+region = Rect2(320, 32, 64, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ic3d6"]
 animations = [{
 "frames": [{
@@ -83,6 +108,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"Grab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e41v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca0mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6upyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxarj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k3cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd672")
+}],
+"loop": true,
+"name": &"Grab_2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -113,6 +161,29 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic3d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spm8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpkfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kysaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egohg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua3np")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo61r"]
@@ -124,11 +195,15 @@ base_status = ExtResource("2_mxepk")
 
 [node name="PlayerAnimation" type="Node2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerAnimation"]
+[node name="CharacterAnimation" type="AnimatedSprite2D" parent="PlayerAnimation"]
 scale = Vector2(3.2, 3.2)
 sprite_frames = SubResource("SpriteFrames_ic3d6")
-animation = &"Idle"
+animation = &"Grab"
 autoplay = "Idle"
+
+[node name="pickItem" type="AudioStreamPlayer" parent="PlayerAnimation/CharacterAnimation"]
+stream = ExtResource("4_e41v5")
+volume_db = -20.612
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)

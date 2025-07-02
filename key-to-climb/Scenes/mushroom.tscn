@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dm8udaf5017mp" path="res://Sprites/Sprites/Mushuroom iten.png" id="1_2r5i3"]
 [ext_resource type="Script" uid="uid://cxafev157pa8c" path="res://Scripts/mushroom.gd" id="1_e0au5"]
 [ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="2_0q7t7"]
-[ext_resource type="Resource" path="res://Scripts/status_files/mushroom.tres" id="2_8wxru"]
+[ext_resource type="Resource" uid="uid://wofjv5758k3e" path="res://Scripts/status_files/mushroom.tres" id="2_8wxru"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0q7t7"]
 radius = 22.2036

@@ -2,39 +2,58 @@ extends CharacterBody2D
 class_name Character
 
 @export var base_status: Status
-@export var alcance_coleta: float = 300
 @onready var sprite = $AnimatedSprite2D
-@export var current_status = base_status
-#add ds
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept"):
-		coletar_item_direcional()
-		
-func coletar_item_direcional():
-	var item_coletado = null
-	var lado = ""
-	var direita = position + Vector2(alcance_coleta, 0)
-	var esquerda = position + Vector2(-alcance_coleta, 0)
+@onready var itens_node = get_parent().get_node("ItemList") # os itens ficam aqui
+@onready var character_animation: AnimatedSprite2D = $PlayerAnimation/CharacterAnimation
+@onready var pick_item: AudioStreamPlayer = $PlayerAnimation/CharacterAnimation/pickItem
 
-	for corpo in get_tree().get_nodes_in_group("itens"):
-		if corpo is Area2D and corpo.global_position.distance_to(direita) < 300:
-			item_coletado = corpo
-			lado = "direita"
-			break
-		elif corpo is Area2D and corpo.global_position.distance_to(esquerda) < 300:
-			item_coletado = corpo
-			lado = "esquerda"
-			break
 
-	#if item_coletado:
-	#	# Toca animação
-	#	sprite.play("coletar_" + lado)
+func _process(delta):
+	if Input.is_action_just_pressed("ui_select"):
+		var mais_proximo_esquerda: Node = null
+		var mais_proximo_direita: Node = null
+		var menor_dist_esquerda = INF
+		var menor_dist_direita = INF
 
-		# zoma os status
-	if item_coletado.has_variable("bonus_status"):
-		current_status.add(item_coletado.bonus_status)
-		item_coletado.queue_free()
-	else:
-		print("Nenhum item próximo!")
+		for item in itens_node.get_children():
+			if not "bonus_status" in item:
+				continue
 
-# func _ready():
+			var dist = item.global_position.distance_to(global_position)
+
+			if item.global_position.x < global_position.x:
+				if dist < menor_dist_esquerda:
+					menor_dist_esquerda = dist
+					mais_proximo_esquerda = item
+			elif item.global_position.x > global_position.x:
+				if dist < menor_dist_direita:
+					menor_dist_direita = dist
+					mais_proximo_direita = item
+
+		# Decide qual pegar com base em quem tá mais perto dos dois
+		if mais_proximo_esquerda and menor_dist_esquerda < menor_dist_direita:
+			pegar_item(mais_proximo_esquerda, "pegar_esquerda")
+			character_animation.play("Grab")
+			pick_item.play()
+			await get_tree().create_timer(1).timeout
+			character_animation.play("Idle")
+			
+		elif mais_proximo_direita:
+			character_animation.flip_h =  true
+			pegar_item(mais_proximo_direita, "pegar_direita")
+			character_animation.play("Grab")
+			pick_item.play()
+			await get_tree().create_timer(1).timeout
+			character_animation.play("Idle")
+
+
+func pegar_item(item: Node, anim: String):
+	var item_status = item.bonus_status
+	base_status.strength += item_status.strength
+	base_status.health += item_status.health
+	base_status.magic += item_status.magic
+	print("Força",base_status.strength)
+	print("Vida", base_status.health)
+	print("Magica", base_status.magic)
+	print("    ")
+	item.queue_free()
