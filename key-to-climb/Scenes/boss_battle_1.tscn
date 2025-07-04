@@ -1,11 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfcfhc0vs8cfp"]
+[gd_scene load_steps=13 format=3 uid="uid://dfcfhc0vs8cfp"]
 
 [ext_resource type="Texture2D" uid="uid://rm5vtbnkg056" path="res://Sprites/Sprites/battle arena.png" id="1_i1hdi"]
+[ext_resource type="Script" uid="uid://cilaka2ce13an" path="res://Scripts/boss_battle_1.gd" id="1_ig0fq"]
 [ext_resource type="PackedScene" uid="uid://160qq6k6o3wo" path="res://Scenes/player_battle.tscn" id="1_pthcb"]
 [ext_resource type="PackedScene" uid="uid://l47meecca66a" path="res://Scenes/demon.tscn" id="3_i1hdi"]
+[ext_resource type="Script" uid="uid://7qfrw58g63iq" path="res://Scripts/player_battle.gd" id="3_r0p1u"]
+[ext_resource type="Resource" uid="uid://c31nc4khctdtg" path="res://Scripts/status_files/player_stats.tres" id="4_n2m0d"]
 [ext_resource type="AudioStream" uid="uid://cfyyg5dhynd8e" path="res://musics/battle music.mp3" id="4_r56yw"]
+[ext_resource type="AudioStream" uid="uid://bfpvkph5qdqh6" path="res://musics/damage taken.mp3" id="8_0wsjj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84bsn"]
+bg_color = Color(0.462291, 0.462291, 0.46229, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wsjj"]
+bg_color = Color(1, 0.227451, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdak1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4n754"]
+bg_color = Color(0.794111, 0, 0.0165603, 1)
 
 [node name="boss_battle_1" type="Node2D"]
+script = ExtResource("1_ig0fq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(400, 287)
@@ -15,11 +31,53 @@ texture = ExtResource("1_i1hdi")
 [node name="player_battle" parent="." instance=ExtResource("1_pthcb")]
 position = Vector2(172, 360)
 scale = Vector2(5, 5)
+frame_progress = 0.0
+script = ExtResource("3_r0p1u")
+base_status = ExtResource("4_n2m0d")
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="player_battle"]
+z_index = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.8
+offset_top = -66.2
+offset_right = 101.2
+offset_bottom = -39.2
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/background = SubResource("StyleBoxFlat_84bsn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0wsjj")
+value = 30.0
+rounded = true
 
 [node name="demon2" parent="." instance=ExtResource("3_i1hdi")]
 position = Vector2(583, 222)
 scale = Vector2(4, 4)
+animation = &"damage_demon"
+
+[node name="BossHealthBar" type="ProgressBar" parent="demon2"]
+offset_left = -140.5
+offset_top = -44.5
+offset_right = 50.5
+offset_bottom = -6.5
+scale = Vector2(0.5, 0.5)
+theme_override_styles/background = SubResource("StyleBoxFlat_bdak1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4n754")
+value = 40.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_r56yw")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="dmg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_0wsjj")
+volume_db = -25.557

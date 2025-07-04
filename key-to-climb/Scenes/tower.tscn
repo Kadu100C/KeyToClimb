@@ -97,8 +97,8 @@ position = Vector2(400, 300)
 scale = Vector2(1.5, 1.5)
 
 [node name="LifeRing" parent="Tower/ItemList" instance=ExtResource("7_8xwd3")]
-position = Vector2(-213.333, -1430.67)
-scale = Vector2(0.666667, 0.666667)
+position = Vector2(-199.333, -1430.67)
+scale = Vector2(0.629087, 0.641557)
 
 [node name="sword" parent="Tower/ItemList" instance=ExtResource("15_a4lnx")]
 position = Vector2(-213.333, -463.333)
@@ -113,11 +113,11 @@ position = Vector2(-213.333, -1763.33)
 scale = Vector2(0.666667, 0.666667)
 
 [node name="axe" parent="Tower/ItemList" instance=ExtResource("17_arclx")]
-position = Vector2(206.667, -1949.33)
+position = Vector2(206.667, -2080.66)
 scale = Vector2(0.666667, 0.666667)
 
 [node name="axe2" parent="Tower/ItemList" instance=ExtResource("17_arclx")]
-position = Vector2(206.667, -2200.67)
+position = Vector2(206.667, -2464.67)
 scale = Vector2(0.666667, 0.666667)
 
 [node name="Mushroom" parent="Tower/ItemList" instance=ExtResource("18_arclx")]

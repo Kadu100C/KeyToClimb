@@ -29,7 +29,7 @@ offset_bottom = 91.0
 theme_override_colors/font_color = Color(0.329412, 0.462745, 0.647059, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_66pvs")
-text = "5+ ATK"
+text = "5+ MAGIC"
 
 [node name="Label" type="Label" parent="Label"]
 visible = false

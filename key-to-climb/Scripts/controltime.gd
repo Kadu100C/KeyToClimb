@@ -4,7 +4,7 @@ extends Control
 @onready var counter_time: Label = $MarginContainer/VBoxContainer/counter_time as Label
 
 var seconds = 0
-@export_range(0,60) var default_seconds = 30
+@export_range(0,60) var default_seconds = 15
 
 
 

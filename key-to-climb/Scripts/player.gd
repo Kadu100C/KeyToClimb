@@ -45,6 +45,7 @@ func _process(delta):
 			pick_item.play()
 			await get_tree().create_timer(1).timeout
 			character_animation.play("Idle")
+			character_animation.flip_h =  false
 
 
 func pegar_item(item: Node, anim: String):

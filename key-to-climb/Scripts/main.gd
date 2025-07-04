@@ -20,8 +20,8 @@ func _process(delta):
 	if subir:
 		time_up += delta
 		#os que são obrigatório é os 2 verdinho
-		$Tower/Player.position.y -= 2
-		$Camera2D.position.y -= 2
+		$Tower/Player.position.y -= 4
+		$Camera2D.position.y -= 4
 		#aqui viu
 		#esse de baixo tb sao temporarios
 		if time_up >= limit_time:

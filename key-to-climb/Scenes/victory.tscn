@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://denp1i32yildc"]
+[gd_scene load_steps=6 format=3 uid="uid://denp1i32yildc"]
 
 [ext_resource type="Texture2D" uid="uid://c8548xset8gqn" path="res://Sprites/Sprites/victory.png" id="1_7yj50"]
+[ext_resource type="Script" uid="uid://dgbdkad4e3qch" path="res://Scripts/game_over.gd" id="1_slr2v"]
 [ext_resource type="FontFile" uid="uid://cmenxea4n7rr" path="res://fonts/PixelOperator8-Bold.ttf" id="2_slr2v"]
 [ext_resource type="FontFile" uid="uid://cew4qp4bliyk7" path="res://fonts/PixelOperator8.ttf" id="3_f34f5"]
 [ext_resource type="AudioStream" uid="uid://cr601ctnr4rdl" path="res://musics/victory music.mp3" id="4_xy5eq"]
 
 [node name="victory" type="CanvasLayer"]
+script = ExtResource("1_slr2v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
